@@ -17,6 +17,9 @@ nav_links <- tags$ul(
     tags$a(href = "/prob", "확률분포"),
   ),
   tags$li(
+    tags$a(href = "/help", "도움말"),
+  ),
+  tags$li(
     tags$a(href = "/contact", "연락처"),
   )
 )
@@ -36,7 +39,7 @@ home <- function() {
     server = function(input, output, session) {
       output$image <- renderImage({
         random_image()
-      })
+      }, deleteFile=TRUE)
     }
   )
 }
@@ -87,17 +90,38 @@ prob_dist <- function() {
       tagList(
         h1("통계 분포"),
         nav_links,
-        plotOutput("plot")
+        plotOutput("dist_plot")
       )
     },
     server = function(input, output, session) {
-      output$plot <- renderPlot({
+      output$dist_plot <- renderPlot({
         random_ggplot()
       })
     }
   )
 }
 
+
+## 5. 도움말 ----------------------
+help <- function() {
+  page(
+    href = "/help",
+    ui = function(request) {
+      tagList(
+        h1("도움말"),
+        nav_links,
+        tableOutput("help_text")
+      )
+    },
+    server = function(input, output, session) {
+      output$help_text <- renderText({
+        random_text(nwords = 100)
+      })
+    }
+  )
+}
+
+## 6. 연락처 ----------------------
 page_contact <- function() {
   page(
     href = "/contact",
@@ -118,6 +142,7 @@ brochureApp(
   import_data(),
   prob_dist(),
   desc_stat(),
+  help(),
   page_contact(),
   # 리다이렉션 *****************
   redirect(
