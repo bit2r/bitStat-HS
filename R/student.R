@@ -1,8 +1,13 @@
+
+# 2. 학생용 ----------------------
 student <- function() {
   page(
     href = "/student",
     ## UI -------------------------
     ui <- grid_page(
+
+      theme = bitStat_theme,
+
       layout = c(
         "student_title student_title student_title student_title",
         "student_select student_dataset student_info student_variable",

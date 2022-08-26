@@ -1,18 +1,7 @@
 library(shiny)
 library(brochure)
 
-# 메뉴 -----------------
-nav_links <- tags$ul(
-  tags$li(
-    tags$a(href = "/", "home"),
-  ),
-  tags$li(
-    tags$a(href = "/teacher", "teacher"),
-  )
-)
-
-
-# 웹페이지 -----------------
+# 1. 웹페이지 -----------------
 source("global.R")
 source("R/home.R")
 source("R/teacher.R")

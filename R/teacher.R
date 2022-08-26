@@ -1,8 +1,13 @@
+
+# 3. 교수용 ----------------------
 teacher <- function() {
   page(
     href = "/teacher",
     ## UI -------------------------
     ui <- grid_page(
+
+      theme = bitStat_theme,
+
       layout = c(
         "header header header",
         "hs_dataset teacher_dataset teacher_details",
