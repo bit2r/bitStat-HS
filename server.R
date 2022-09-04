@@ -1,3 +1,4 @@
+source("R/module_helloworld.R")
 
 # Define server logic required to draw a histogram
 function(input, output, session) {
@@ -20,9 +21,11 @@ function(input, output, session) {
   ## 2.1. Call Shiny App ---------------------------------
   observeEvent(input$teacherButton, {
 
-    # rstudioapi::jobRunScript("R/student.R")
-    shiny::shinyApp("R/student.R")
-    shiny::shinyApp("R/app.R")
+    rstudioapi::jobRunScript("R/hello_app.R")
+    # shiny::shinyApp("R/student.R")
+    # shiny::shinyApp("R/hello_app.R")
+    # hello_world_UI(id = "id_1")
+    # hello_world_server(id = "id_1")
 
   })
 

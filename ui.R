@@ -57,7 +57,7 @@ grid_page(
     area = "student",
     item_gap = "12px",
     uiOutput(outputId = "studentUi"),
-    actionButton("studentButton", "앱 바로가기")
+    tags$a(href = "/teacher", "앱 바로가기")
   ),
   grid_card_text(
     area = "student_text",
@@ -71,7 +71,7 @@ grid_page(
     uiOutput(outputId = "BitStatUi"),
     actionButton(inputId ="bitstatButton",
                  label   = "앱 바로가기",
-                 onclick ="window.open('https://antony.shinyapps.io/bitstat/', '_blank')")
+                 onclick ="window.open('https://bitstat.shinyapps.io/bitstat/', '_blank')")
   ),
   grid_card_text(
     area = "bitstat_text",
