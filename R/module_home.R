@@ -1,7 +1,10 @@
 
 # 1. 홈 ----------------------
 
-ui <- function(request) {
+home_UI <- function(id) {
+
+  ns <- NS(id)
+
   grid_page(
 
     theme = bitStat_theme,
@@ -88,28 +91,31 @@ ui <- function(request) {
 
 
 ## 서버 -------------------------
-server <- function(input, output, session) {
-  ## 중학교 교과서 ---------------------------------
-  output$ms_textbook_01 <- renderUI({
-    tags$img(src = "high_school_textbook.png", width="35%")
-  })
-  output$ms_textbook_02 <- renderUI({
-    tags$img(src = "high_school_textbook_01.png", width="35%")
-  })
-  output$ms_textbook_03 <- renderUI({
-    tags$img(src = "prob-stat-textbook-01.png", width="40%")
-  })
+home_server <- function(id) {
 
-  ## 고등학교 교과서 ---------------------------------
-  output$hs_textbook_01 <- renderUI({
-    tags$img(src = "prob-stat-textbook-02.png", width="50%")
-  })
-  output$hs_textbook_02 <- renderUI({
-    tags$img(src = "prob-stat-textbook-03.png", width="50%")
-  })
-  output$hs_textbook_03 <- renderUI({
-    tags$img(src = "prob-stat-textbook-04.png", width="40%")
+  moduleServer(id, function(input, output, session) {
+    ## 중학교 교과서 ---------------------------------
+    output$ms_textbook_01 <- renderUI({
+      tags$img(src = "high_school_textbook.png", width="35%")
+    })
+    output$ms_textbook_02 <- renderUI({
+      tags$img(src = "high_school_textbook_01.png", width="35%")
+    })
+    output$ms_textbook_03 <- renderUI({
+      tags$img(src = "prob-stat-textbook-01.png", width="40%")
+    })
+
+    ## 고등학교 교과서 ---------------------------------
+    output$hs_textbook_01 <- renderUI({
+      tags$img(src = "prob-stat-textbook-02.png", width="50%")
+    })
+    output$hs_textbook_02 <- renderUI({
+      tags$img(src = "prob-stat-textbook-03.png", width="50%")
+    })
+    output$hs_textbook_03 <- renderUI({
+      tags$img(src = "prob-stat-textbook-04.png", width="40%")
+    })
   })
 }
 
-shiny::runApp(ui = ui, server = server)
+
