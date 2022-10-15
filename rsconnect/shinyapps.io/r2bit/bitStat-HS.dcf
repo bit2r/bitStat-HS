@@ -1,0 +1,13 @@
+name: bitStat-HS
+title: bitStat-HS
+username:
+account: r2bit
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 6866920
+bundleId: 6405931
+url: https://r2bit.shinyapps.io/bitStat-HS/
+when: 1665837676.26758
+lastSyncTime: 1665837676.26759
+asMultiple: FALSE
+asStatic: FALSE
