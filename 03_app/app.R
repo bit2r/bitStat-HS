@@ -244,5 +244,5 @@ server <- function(input, output, session) {
   })
 }
 
-# shiny::shinyApp(ui, server)
+shiny::shinyApp(ui, server)
 

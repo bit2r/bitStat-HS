@@ -97,7 +97,7 @@ curriculum_server <- function(id) {
       tags$img(src = "www/high_school_textbook.png", width="35%")
     })
     output$ms_textbook_02 <- renderUI({
-      tags$img(src = "./catalog/www/high_school_textbook_01.png", width="35%")
+      tags$img(src = "high_school_textbook_01.png", width="35%")
     })
     output$ms_textbook_03 <- renderUI({
       tags$img(src = "./catalog/prob-stat-textbook-01.png", width="40%")
@@ -105,13 +105,13 @@ curriculum_server <- function(id) {
 
     ## 고등학교 교과서 ---------------------------------
     output$hs_textbook_01 <- renderUI({
-      tags$img(src = "prob-stat-textbook-02.png", width="50%")
+      tags$img(src = glue::glue("{here::here()}/prob-stat-textbook-04.png"), width="40%")
     })
     output$hs_textbook_02 <- renderUI({
-      tags$img(src = "prob-stat-textbook-03.png", width="50%")
+      tags$img(src = glue::glue("{here::here()}/02_module/prob-stat-textbook-04.png"), width="40%")
     })
     output$hs_textbook_03 <- renderUI({
-      tags$img(src = "prob-stat-textbook-04.png", width="40%")
+      tags$img(src = glue::glue("{here::here()}/02_module/www/prob-stat-textbook-04.png"), width="40%")
     })
   })
 }
